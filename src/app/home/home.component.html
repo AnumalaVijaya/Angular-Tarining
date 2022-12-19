@@ -1,0 +1,55 @@
+<div clas="form-group">
+    <label>User Name:</label>
+<input type="text"  [(ngModel)]="name"></div>
+<!-- <p  [ngStyle]="{backgroundColor:getColor()}">{{name}}</p> -->
+<br>
+<button type="button" (click)="add()" >Display details</button>
+<p><label>Your name:{{data}}</label></p>
+
+<p>Passing an Array of classes using ngclass style:</p>
+<button [ngClass]="['btn', 'btn-primary']" (click)="toggleState()">Button</button>
+<br>
+<p>Passing a string:</p>
+<button [ngClass]="'btn btn-success'" 
+        type="submit" 
+        (click)="submit()">
+  Button
+</button>
+<p>Passing a configuration object:</p>
+<button [ngClass]="{ btn:true, 'btn-danger':true }">
+  Button
+</button>
+
+
+<p>Passing an object to ngStyle:</p>
+<button [ngStyle]="{background: 'red'}">Button</button>
+<br>
+
+<p>ngstyle and ngmodel</p>
+<input type="text" ngstyle="background:'lightblue';"  [(ngModel)]="name">
+<p> using ngfor </p>
+<ul>
+    <li *ngFor="let item of colour" type="1">
+      {{ item.name }}
+    </li>
+   </ul>
+
+   <p>using ngSwitch</p>
+   <ul *ngFor="let person of people"
+    [ngSwitch]="person.country"> 
+
+  <li *ngSwitchCase="'UK'" 
+      class="text-success">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchDefault 
+      class="text-warning">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+<p>data bining</p>
+{{name}}
